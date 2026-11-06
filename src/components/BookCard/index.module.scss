@@ -1,0 +1,105 @@
+@use '@/styles/variables.scss' as *;
+
+.card {
+  position: relative;
+  background: $color-bg-card;
+  border-radius: $radius-lg;
+  padding: $spacing-xl;
+  box-shadow: $shadow-card;
+  overflow: hidden;
+  transition: all $transition-base;
+
+  &:active {
+    transform: scale(0.98);
+  }
+}
+
+.selected {
+  box-shadow: 0 0 0 4rpx $color-primary, $shadow-card;
+}
+
+.bgDeco {
+  position: absolute;
+  top: -40rpx;
+  right: -40rpx;
+  width: 160rpx;
+  height: 160rpx;
+  border-radius: $radius-round;
+}
+
+.header {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: $spacing-md;
+}
+
+.icon {
+  font-size: 48rpx;
+}
+
+.levelBadge {
+  padding: 6rpx 16rpx;
+  border-radius: $radius-button;
+}
+
+.levelText {
+  font-size: $font-size-xs;
+  color: $color-text-white;
+  font-weight: $font-weight-semibold;
+}
+
+.name {
+  display: block;
+  font-size: $font-size-lg;
+  font-weight: $font-weight-semibold;
+  color: $color-text-primary;
+  margin-bottom: $spacing-xs;
+}
+
+.desc {
+  display: block;
+  font-size: $font-size-sm;
+  color: $color-text-tertiary;
+  margin-bottom: $spacing-md;
+  @include text-ellipsis-multi(2);
+}
+
+.footer {
+  position: relative;
+}
+
+.progressBar {
+  height: 8rpx;
+  background: $color-divider;
+  border-radius: $radius-round;
+  overflow: hidden;
+  margin-bottom: $spacing-xs;
+}
+
+.progressFill {
+  height: 100%;
+  border-radius: $radius-round;
+  transition: width $transition-base;
+}
+
+.progressText {
+  font-size: $font-size-xs;
+  color: $color-text-tertiary;
+}
+
+.selectedTag {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background: $color-primary;
+  padding: 8rpx 16rpx;
+  border-radius: 0 $radius-lg 0 $radius-md;
+}
+
+.selectedText {
+  font-size: $font-size-xs;
+  color: $color-text-white;
+  font-weight: $font-weight-medium;
+}

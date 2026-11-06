@@ -1,0 +1,73 @@
+@use '@/styles/variables.scss' as *;
+
+.card {
+  background: $color-bg-card;
+  border-radius: $radius-lg;
+  padding: $spacing-xl;
+  box-shadow: $shadow-card;
+}
+
+.compact {
+  padding: $spacing-lg;
+}
+
+.mainRow {
+  display: flex;
+  align-items: baseline;
+  gap: $spacing-sm;
+  margin-bottom: $spacing-sm;
+}
+
+.kanji {
+  font-size: 72rpx;
+  font-weight: $font-weight-bold;
+  color: $color-kanji;
+  line-height: 1.2;
+}
+
+.kana {
+  font-size: 36rpx;
+  color: $color-kana;
+  font-weight: $font-weight-medium;
+}
+
+.romaji {
+  display: block;
+  font-size: $font-size-sm;
+  color: $color-romaji;
+  font-style: italic;
+  margin-bottom: $spacing-lg;
+  letter-spacing: 2rpx;
+}
+
+.meaning {
+  display: block;
+  font-size: $font-size-lg;
+  color: $color-text-primary;
+  font-weight: $font-weight-medium;
+  margin-bottom: $spacing-lg;
+}
+
+.exampleSection {
+  margin-top: $spacing-md;
+}
+
+.exampleDivider {
+  height: 2rpx;
+  background: $color-divider;
+  margin: $spacing-md 0;
+}
+
+.example {
+  display: block;
+  font-size: $font-size-md;
+  color: $color-example;
+  line-height: $line-height-loose;
+  margin-bottom: $spacing-xs;
+}
+
+.exampleMeaning {
+  display: block;
+  font-size: $font-size-sm;
+  color: $color-text-tertiary;
+}

@@ -1,0 +1,295 @@
+@use '@/styles/variables.scss' as *;
+
+.page {
+  min-height: 100vh;
+  background: linear-gradient(180deg, $color-primary-light 0%, $color-bg-page 20%);
+  padding: $spacing-lg $page-padding 48rpx;
+}
+
+// ====== 进度条 ======
+.progressBar {
+  height: 6rpx;
+  background: rgba(255, 255, 255, 0.5);
+  border-radius: $radius-round;
+  overflow: hidden;
+  margin-bottom: $spacing-sm;
+}
+
+.progressFill {
+  height: 100%;
+  background: $color-primary;
+  border-radius: $radius-round;
+  transition: width 0.3s ease;
+}
+
+.progressText {
+  display: block;
+  text-align: center;
+  font-size: $font-size-sm;
+  color: $color-text-secondary;
+  margin-bottom: $spacing-xl;
+}
+
+// ====== 学习区域 ======
+.studyArea {
+  padding-top: $spacing-xl;
+}
+
+.phaseTag {
+  text-align: center;
+  margin-bottom: $spacing-xl;
+}
+
+.phaseText {
+  display: inline-block;
+  padding: 8rpx 24rpx;
+  background: rgba(255, 255, 255, 0.8);
+  border-radius: $radius-button;
+  font-size: $font-size-sm;
+  color: $color-text-secondary;
+}
+
+// ====== 单词卡片 ======
+.wordCard {
+  background: $color-bg-card;
+  border-radius: $radius-xl;
+  padding: $spacing-xxl $spacing-xl;
+  box-shadow: $shadow-card-hover;
+  text-align: center;
+  margin-bottom: $spacing-xl;
+}
+
+.kanjiBig {
+  display: block;
+  font-size: 120rpx;
+  font-weight: $font-weight-bold;
+  color: $color-kanji;
+  line-height: 1.1;
+  margin-bottom: $spacing-lg;
+}
+
+.kanaSection {
+  margin-bottom: $spacing-lg;
+}
+
+.kana {
+  display: block;
+  font-size: 56rpx;
+  color: $color-kana;
+  font-weight: $font-weight-medium;
+  margin-bottom: $spacing-sm;
+}
+
+.showKana {
+  // 显示状态样式
+}
+
+.romaji {
+  display: block;
+  font-size: $font-size-sm;
+  color: $color-romaji;
+  font-style: italic;
+  letter-spacing: 2rpx;
+  margin-bottom: $spacing-sm;
+}
+
+.kanaHint {
+  font-size: $font-size-sm;
+  color: $color-text-tertiary;
+}
+
+.meaningSection {
+  padding: $spacing-lg 0;
+  border-top: 2rpx solid $color-divider;
+  border-bottom: 2rpx solid $color-divider;
+}
+
+.showBtn {
+  display: inline-block;
+  padding: 16rpx 48rpx;
+  background: $color-bg-highlight;
+  border-radius: $radius-button;
+  font-size: $font-size-md;
+  color: $color-primary;
+  font-weight: $font-weight-medium;
+
+  &:active {
+    opacity: 0.8;
+  }
+}
+
+.meaning {
+  display: block;
+  font-size: $font-size-xl;
+  font-weight: $font-weight-semibold;
+  color: $color-text-primary;
+  margin-bottom: $spacing-md;
+}
+
+.exampleBox {
+  background: linear-gradient(135deg, #F8F9FF 0%, #F5F7FF 100%);
+  border-radius: $radius-md;
+  padding: $spacing-md;
+  margin-top: $spacing-md;
+}
+
+.example {
+  display: block;
+  font-size: $font-size-md;
+  color: $color-example;
+  line-height: $line-height-loose;
+  margin-bottom: $spacing-xs;
+}
+
+.exampleMeaning {
+  display: block;
+  font-size: $font-size-sm;
+  color: $color-text-tertiary;
+}
+
+.speakBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: $spacing-xs;
+  padding: $spacing-sm $spacing-lg;
+  margin-top: $spacing-lg;
+  background: $color-bg-highlight;
+  border-radius: $radius-button;
+  transition: all $transition-fast;
+
+  &:active {
+    transform: scale(0.95);
+  }
+}
+
+.speakIcon {
+  font-size: 28rpx;
+}
+
+.speakText {
+  font-size: $font-size-sm;
+  color: $color-primary;
+}
+
+// ====== 操作按钮 ======
+.actionArea {
+  display: flex;
+  gap: $spacing-lg;
+  padding: 0 $spacing-md;
+}
+
+.actionBtn {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 160rpx;
+  border-radius: $radius-lg;
+  transition: all $transition-fast;
+
+  &:active {
+    transform: scale(0.96);
+  }
+}
+
+.forgetBtn {
+  background: linear-gradient(135deg, #FFE5E5 0%, #FFD4D4 100%);
+}
+
+.knowBtn {
+  background: linear-gradient(135deg, #E5F9EF 0%, #D4F5E3 100%);
+}
+
+.actionEmoji {
+  font-size: 48rpx;
+  margin-bottom: $spacing-xs;
+}
+
+.actionText {
+  font-size: $font-size-md;
+  font-weight: $font-weight-semibold;
+  color: $color-text-primary;
+}
+
+// ====== 空页面 ======
+.emptyPage,
+.donePage {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 0 $page-padding;
+}
+
+.emptyEmoji,
+.doneEmoji {
+  font-size: 120rpx;
+  margin-bottom: $spacing-xl;
+}
+
+.emptyTitle,
+.doneTitle {
+  font-size: $font-size-xl;
+  font-weight: $font-weight-bold;
+  color: $color-text-primary;
+  margin-bottom: $spacing-md;
+  text-align: center;
+}
+
+.emptyDesc {
+  font-size: $font-size-md;
+  color: $color-text-tertiary;
+  text-align: center;
+  margin-bottom: $spacing-xxl;
+}
+
+.backBtn {
+  @include button-reset;
+  height: $button-height-md;
+  padding: 0 64rpx;
+  background: $color-primary;
+  border-radius: $radius-button;
+
+  &:active {
+    opacity: 0.9;
+    transform: scale(0.98);
+  }
+}
+
+.backBtnText {
+  font-size: $font-size-md;
+  color: $color-text-white;
+  font-weight: $font-weight-medium;
+}
+
+// ====== 完成页统计 ======
+.doneStats {
+  display: flex;
+  background: $color-bg-card;
+  border-radius: $radius-lg;
+  padding: $spacing-xl $spacing-xxl;
+  margin-bottom: $spacing-xxl;
+  box-shadow: $shadow-card;
+}
+
+.doneStat {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.doneStatNumber {
+  font-size: 48rpx;
+  font-weight: $font-weight-bold;
+  color: $color-primary;
+  line-height: 1;
+}
+
+.doneStatLabel {
+  font-size: $font-size-sm;
+  color: $color-text-tertiary;
+  margin-top: $spacing-xs;
+}

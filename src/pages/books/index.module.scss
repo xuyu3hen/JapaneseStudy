@@ -1,0 +1,61 @@
+@use '@/styles/variables.scss' as *;
+
+.page {
+  min-height: 100vh;
+  background: $color-bg-page;
+  padding-bottom: 48rpx;
+}
+
+.header {
+  padding: 32rpx $page-padding 24rpx;
+}
+
+.title {
+  display: block;
+  font-size: $font-size-xxl;
+  font-weight: $font-weight-bold;
+  color: $color-text-primary;
+  margin-bottom: $spacing-xs;
+}
+
+.subtitle {
+  display: block;
+  font-size: $font-size-sm;
+  color: $color-text-tertiary;
+}
+
+.bookList {
+  padding: 0 $page-padding;
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-lg;
+}
+
+.tipsCard {
+  margin: $spacing-xl $page-padding;
+  background: linear-gradient(135deg, #FFF5F7 0%, #FFF0F5 100%);
+  border-radius: $radius-lg;
+  padding: $spacing-xl;
+  border: 2rpx solid $color-primary-light + '30';
+}
+
+.tipsTitle {
+  display: block;
+  font-size: $font-size-md;
+  font-weight: $font-weight-semibold;
+  color: $color-primary-dark;
+  margin-bottom: $spacing-md;
+}
+
+.tipsList {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-xs;
+}
+
+.tipsItem {
+  display: block;
+  font-size: $font-size-sm;
+  color: $color-text-secondary;
+  line-height: $line-height-loose;
+}

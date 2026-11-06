@@ -1,0 +1,319 @@
+@use '@/styles/variables.scss' as *;
+
+.page {
+  min-height: 100vh;
+  background: $color-bg-page;
+  padding-bottom: 48rpx;
+}
+
+// ====== Hero 区域 ======
+.heroSection {
+  position: relative;
+  padding: 48rpx $page-padding 32rpx;
+  overflow: hidden;
+}
+
+.heroBg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 400rpx;
+  background: linear-gradient(135deg, $color-primary 0%, $color-primary-light 100%);
+  border-radius: 0 0 48rpx 48rpx;
+}
+
+.heroContent {
+  position: relative;
+  z-index: 1;
+}
+
+.greeting {
+  display: flex;
+  align-items: center;
+  gap: $spacing-md;
+  margin-bottom: $spacing-lg;
+}
+
+.greetingEmoji {
+  font-size: 56rpx;
+}
+
+.greetingText {
+  display: block;
+  font-size: $font-size-xl;
+  font-weight: $font-weight-bold;
+  color: $color-text-white;
+}
+
+.greetingSub {
+  font-size: $font-size-sm;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.streakCard {
+  display: inline-flex;
+  align-items: center;
+  gap: $spacing-md;
+  background: rgba(255, 255, 255, 0.25);
+  backdrop-filter: blur(10px);
+  border-radius: $radius-lg;
+  padding: $spacing-md $spacing-xl;
+}
+
+.streakIcon {
+  font-size: 40rpx;
+}
+
+.streakInfo {
+  display: flex;
+  align-items: baseline;
+  gap: $spacing-xs;
+}
+
+.streakNumber {
+  font-size: 56rpx;
+  font-weight: $font-weight-bold;
+  color: $color-text-white;
+  line-height: 1;
+}
+
+.streakLabel {
+  font-size: $font-size-sm;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+// ====== 进度卡片 ======
+.progressCard {
+  display: flex;
+  align-items: center;
+  background: $color-bg-card;
+  border-radius: $radius-lg;
+  padding: $spacing-xl;
+  margin: -32rpx $page-padding $spacing-lg;
+  box-shadow: $shadow-card;
+  position: relative;
+  z-index: 2;
+}
+
+.progressLeft {
+  flex-shrink: 0;
+  margin-right: $spacing-xl;
+}
+
+.progressRight {
+  flex: 1;
+}
+
+.progressStatsTitle {
+  display: block;
+  font-size: $font-size-md;
+  font-weight: $font-weight-semibold;
+  color: $color-text-primary;
+  margin-bottom: $spacing-md;
+}
+
+.statsRow {
+  display: flex;
+  gap: $spacing-lg;
+}
+
+.statItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex: 1;
+}
+
+.statNumber {
+  font-size: 36rpx;
+  font-weight: $font-weight-bold;
+  line-height: 1.2;
+}
+
+.statLabel {
+  font-size: $font-size-xs;
+  color: $color-text-tertiary;
+  margin-top: $spacing-xs;
+}
+
+.newColor { color: $color-info; }
+.learningColor { color: $color-warning; }
+.masteredColor { color: $color-success; }
+
+// ====== 通用区块 ======
+.section {
+  padding: 0 $page-padding;
+  margin-bottom: $spacing-xl;
+}
+
+.sectionTitle {
+  display: block;
+  font-size: $font-size-lg;
+  font-weight: $font-weight-semibold;
+  color: $color-text-primary;
+  margin-bottom: $spacing-md;
+}
+
+// ====== 五十音图入口 ======
+.gojuonBanner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: linear-gradient(135deg, $color-secondary 0%, $color-secondary-light 100%);
+  border-radius: $radius-xl;
+  padding: $spacing-xl;
+  box-shadow: 0 8rpx 32rpx rgba(78, 205, 196, 0.3);
+  transition: all $transition-fast;
+
+  &:active {
+    transform: scale(0.98);
+    opacity: 0.95;
+  }
+}
+
+.gojuonContent {
+  flex: 1;
+}
+
+.gojuonTitle {
+  display: block;
+  font-size: $font-size-xl;
+  font-weight: $font-weight-bold;
+  color: $color-text-white;
+  margin-bottom: $spacing-xs;
+}
+
+.gojuonDesc {
+  display: block;
+  font-size: $font-size-sm;
+  color: rgba(255, 255, 255, 0.85);
+  margin-bottom: $spacing-md;
+}
+
+.gojuonAction {
+  display: inline-block;
+  font-size: $font-size-sm;
+  color: $color-text-white;
+  font-weight: $font-weight-medium;
+  background: rgba(255, 255, 255, 0.25);
+  padding: 8rpx 20rpx;
+  border-radius: $radius-button;
+}
+
+.gojuonPreview {
+  display: flex;
+  flex-direction: column;
+  gap: 4rpx;
+  padding: $spacing-sm;
+}
+
+.gojuonChar {
+  font-size: 36rpx;
+  color: $color-text-white;
+  font-weight: $font-weight-semibold;
+  opacity: 0.9;
+}
+
+// ====== 任务卡片 ======
+.taskCard {
+  background: $color-bg-card;
+  border-radius: $radius-lg;
+  padding: $spacing-md;
+  box-shadow: $shadow-card;
+}
+
+.taskItem {
+  display: flex;
+  align-items: center;
+  padding: $spacing-lg;
+  border-radius: $radius-md;
+  transition: all $transition-base;
+
+  &:active {
+    background: $color-bg-hover;
+  }
+}
+
+.taskDone {
+  opacity: 0.6;
+}
+
+.taskIcon {
+  width: 88rpx;
+  height: 88rpx;
+  border-radius: $radius-md;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: $spacing-lg;
+  flex-shrink: 0;
+}
+
+.taskEmoji {
+  font-size: 40rpx;
+}
+
+.taskInfo {
+  flex: 1;
+}
+
+.taskTitle {
+  display: block;
+  font-size: $font-size-md;
+  font-weight: $font-weight-semibold;
+  color: $color-text-primary;
+  margin-bottom: $spacing-xs;
+}
+
+.taskDesc {
+  font-size: $font-size-sm;
+  color: $color-text-tertiary;
+}
+
+.taskAction {
+  flex-shrink: 0;
+}
+
+.taskArrow {
+  font-size: 36rpx;
+  color: $color-text-tertiary;
+}
+
+.taskCheck {
+  font-size: 36rpx;
+  color: $color-success;
+}
+
+// ====== 快捷入口 ======
+.quickGrid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: $spacing-md;
+}
+
+.quickItem {
+  width: calc((100% - $spacing-md * 3) / 4);
+  background: $color-bg-card;
+  border-radius: $radius-lg;
+  padding: $spacing-lg $spacing-md;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: $shadow-card;
+  transition: all $transition-base;
+
+  &:active {
+    transform: scale(0.95);
+  }
+}
+
+.quickEmoji {
+  font-size: 48rpx;
+  margin-bottom: $spacing-sm;
+}
+
+.quickLabel {
+  font-size: $font-size-xs;
+  color: $color-text-secondary;
+}

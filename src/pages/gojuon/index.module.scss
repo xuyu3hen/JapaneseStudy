@@ -1,0 +1,400 @@
+@use '@/styles/variables.scss' as *;
+
+.page {
+  min-height: 100vh;
+  background: $color-bg-page;
+  padding-bottom: 48rpx;
+}
+
+// ====== Tab 栏 ======
+.tabBar {
+  background: $color-bg-card;
+  white-space: nowrap;
+  box-shadow: $shadow-card;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.tabItem {
+  display: inline-block;
+  padding: $spacing-md $spacing-xl;
+  transition: all $transition-fast;
+}
+
+.tabText {
+  font-size: $font-size-md;
+  color: $color-text-tertiary;
+}
+
+.tabTextActive {
+  color: $color-primary;
+  font-weight: $font-weight-semibold;
+}
+
+.tabItemActive {
+  border-bottom: 4rpx solid $color-primary;
+}
+
+// ====== 模式切换 ======
+.modeSwitch {
+  display: flex;
+  gap: $spacing-sm;
+  padding: $spacing-md $page-padding;
+}
+
+.modeBtn {
+  flex: 1;
+  height: 64rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: $color-bg-card;
+  border-radius: $radius-button;
+  border: 2rpx solid $color-border;
+  transition: all $transition-fast;
+}
+
+.modeBtnActive {
+  background: $color-primary;
+  border-color: $color-primary;
+}
+
+.modeText {
+  font-size: $font-size-sm;
+  color: $color-text-secondary;
+}
+
+.modeTextActive {
+  color: $color-text-white;
+  font-weight: $font-weight-medium;
+}
+
+// ====== 假名格子 ======
+.gridContainer {
+  padding: $spacing-md $page-padding;
+}
+
+.grid {
+  background: $color-bg-card;
+  border-radius: $radius-lg;
+  padding: $spacing-md;
+  box-shadow: $shadow-card;
+}
+
+.gridRow {
+  display: flex;
+  align-items: stretch;
+}
+
+.rowLabel {
+  width: 56rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, $color-primary-light + '30' 0%, $color-primary + '20' 100%);
+  border-radius: $radius-sm;
+  margin-right: 8rpx;
+  flex-shrink: 0;
+}
+
+.rowLabelText {
+  font-size: 28rpx;
+  font-weight: $font-weight-semibold;
+  color: $color-primary-dark;
+}
+
+.rowCells {
+  flex: 1;
+  display: flex;
+  gap: 8rpx;
+  margin-bottom: 8rpx;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.kanaCell {
+  flex: 1;
+  aspect-ratio: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #FAFAFA 0%, #F5F5F5 100%);
+  border-radius: $radius-md;
+  transition: all $transition-fast;
+
+  &:active {
+    transform: scale(0.95);
+    background: linear-gradient(135deg, $color-bg-highlight 0%, $color-primary-light + '30' 100%);
+  }
+}
+
+.kanaCellEmpty {
+  background: transparent;
+}
+
+.kanaCellSelected {
+  background: linear-gradient(135deg, $color-bg-highlight 0%, $color-primary-light + '40' 100%);
+  box-shadow: 0 0 0 4rpx $color-primary + '30';
+}
+
+.kanaHiragana {
+  font-size: 44rpx;
+  color: $color-text-primary;
+  line-height: 1.1;
+}
+
+.kanaKatakana {
+  font-size: 40rpx;
+  color: $color-text-secondary;
+  line-height: 1.1;
+}
+
+.kanaDivider {
+  width: 32rpx;
+  height: 2rpx;
+  background: $color-border;
+  margin: 4rpx 0;
+}
+
+.kanaRomaji {
+  font-size: 18rpx;
+  color: $color-text-tertiary;
+  margin-top: 4rpx;
+}
+
+// ====== 假名详情 ======
+.kanaDetail {
+  margin: $spacing-lg $page-padding;
+  background: linear-gradient(135deg, $color-primary 0%, $color-primary-light 100%);
+  border-radius: $radius-xl;
+  padding: $spacing-xxl;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 0 8rpx 32rpx rgba(255, 107, 157, 0.3);
+
+  &:active {
+    opacity: 0.9;
+  }
+}
+
+.detailBig {
+  display: flex;
+  align-items: center;
+  gap: $spacing-xl;
+  margin-bottom: $spacing-md;
+}
+
+.detailKana {
+  font-size: 140rpx;
+  font-weight: $font-weight-bold;
+  color: $color-text-white;
+  line-height: 1;
+}
+
+.detailKanaKatakana {
+  font-size: 120rpx;
+  font-weight: $font-weight-medium;
+  color: rgba(255, 255, 255, 0.7);
+  line-height: 1;
+}
+
+.detailRomaji {
+  font-size: $font-size-xxl;
+  color: $color-text-white;
+  font-weight: $font-weight-semibold;
+  letter-spacing: 4rpx;
+}
+
+.detailHint {
+  font-size: $font-size-sm;
+  color: rgba(255, 255, 255, 0.8);
+  margin-top: $spacing-md;
+}
+
+// ====== 练习模式 ======
+.practiceContainer {
+  padding: $spacing-lg $page-padding;
+}
+
+.practiceModeSwitch {
+  display: flex;
+  gap: $spacing-sm;
+  margin-bottom: $spacing-lg;
+}
+
+.practiceModeBtn {
+  flex: 1;
+  padding: $spacing-md;
+  background: $color-bg-card;
+  border-radius: $radius-md;
+  border: 2rpx solid $color-border;
+  text-align: center;
+  transition: all $transition-fast;
+}
+
+.practiceModeBtnActive {
+  background: $color-primary;
+  border-color: $color-primary;
+}
+
+.practiceModeText {
+  font-size: $font-size-sm;
+  color: $color-text-secondary;
+}
+
+.practiceModeBtnActive .practiceModeText {
+  color: $color-text-white;
+}
+
+.scoreCard {
+  background: $color-bg-card;
+  border-radius: $radius-lg;
+  padding: $spacing-lg;
+  text-align: center;
+  margin-bottom: $spacing-lg;
+  box-shadow: $shadow-card;
+}
+
+.scoreText {
+  display: block;
+  font-size: 56rpx;
+  font-weight: $font-weight-bold;
+  color: $color-primary;
+  line-height: 1;
+}
+
+.scoreLabel {
+  font-size: $font-size-sm;
+  color: $color-text-tertiary;
+  margin-top: $spacing-xs;
+}
+
+.questionCard {
+  background: linear-gradient(135deg, #F8F9FF 0%, #F5F7FF 100%);
+  border-radius: $radius-xl;
+  padding: $spacing-xxl;
+  text-align: center;
+  margin-bottom: $spacing-xl;
+}
+
+.questionKana {
+  margin-bottom: $spacing-md;
+}
+
+.questionBig {
+  font-size: 140rpx;
+  font-weight: $font-weight-bold;
+  color: $color-text-primary;
+  display: block;
+  line-height: 1.1;
+}
+
+.questionKatakana {
+  font-size: 100rpx;
+  color: $color-text-secondary;
+  opacity: 0.7;
+}
+
+.questionRomaji {
+  font-size: 140rpx;
+  font-weight: $font-weight-bold;
+  color: $color-primary;
+  letter-spacing: 8rpx;
+}
+
+.questionHint {
+  font-size: $font-size-sm;
+  color: $color-text-tertiary;
+  margin-top: $spacing-md;
+}
+
+.optionsGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: $spacing-md;
+  margin-bottom: $spacing-xl;
+}
+
+.optionBtn {
+  padding: $spacing-lg;
+  background: $color-bg-card;
+  border-radius: $radius-lg;
+  border: 2rpx solid $color-border;
+  text-align: center;
+  transition: all $transition-fast;
+
+  &:active {
+    transform: scale(0.96);
+    border-color: $color-primary;
+  }
+}
+
+.optionCorrect {
+  background: linear-gradient(135deg, #E5F9EF 0%, #D4F5E3 100%);
+  border-color: $color-success;
+}
+
+.optionWrong {
+  background: linear-gradient(135deg, #FFE5E5 0%, #FFD4D4 100%);
+  border-color: $color-error;
+}
+
+.optionDisabled {
+  opacity: 0.5;
+}
+
+.optionText {
+  font-size: $font-size-xl;
+  font-weight: $font-weight-semibold;
+  color: $color-text-primary;
+}
+
+.optionCorrect .optionText {
+  color: $color-success;
+}
+
+.optionWrong .optionText {
+  color: $color-error;
+}
+
+.resultArea {
+  text-align: center;
+}
+
+.resultText {
+  display: block;
+  font-size: $font-size-lg;
+  font-weight: $font-weight-semibold;
+  margin-bottom: $spacing-lg;
+}
+
+.resultCorrect {
+  color: $color-success;
+}
+
+.resultWrong {
+  color: $color-error;
+}
+
+.nextBtn {
+  display: inline-block;
+  padding: $spacing-md $spacing-xxl;
+  background: $color-primary;
+  border-radius: $radius-button;
+
+  &:active {
+    opacity: 0.9;
+    transform: scale(0.98);
+  }
+}
+
+.nextBtnText {
+  font-size: $font-size-md;
+  color: $color-text-white;
+  font-weight: $font-weight-medium;
+}
